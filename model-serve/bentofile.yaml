@@ -1,0 +1,16 @@
+service: "service.py:EmojiClassifierService"
+labels:
+  owner: stect
+  project: emoji-classifier
+python:
+  packages:
+    - torch
+    - pytorch-lightning
+    - torchvision
+    - pillow
+    - torchmetrics
+# Explicitly declare required models
+models:
+  - emoji_classifier:latest
+include:
+  - service.py
